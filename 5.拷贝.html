@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 拷贝 就是  复制
+        // 深拷贝:  拷贝基本类型的数组  都是 深拷贝
+        // 浅拷贝
+
+
+        // 深拷贝
+        // var str = "aaa";
+        // var copyStr = str;
+        // copyStr =  copyStr + "你好";
+        // console.log(copyStr,str)
+
+
+        // 浅拷贝  : 一个改变 会影响另一个改变
+        var arr = [1,2,3,4]
+        var copyArr = arr;
+        copyArr.push("new Content")
+        console.log(copyArr,arr)
+
+        // 对象与数组  直接复制变量: 实现都是浅拷贝
+
+        // 如何实现对象与数组的深拷贝?
+        var arr1 = ["sss",1,2,3,4]
+        var obj = {
+            name:"aaa",
+            age:23
+        }
+
+        //展开运算符
+        var arr2 =[...arr1];
+        var obj2 = {...obj}
+        arr2.push("嘻嘻嘻");
+        obj2.sex = "男"
+        console.log(arr2,arr1)
+        console.log(obj2,obj)
+
+        var arr3 = [];
+        arr3 = arr3.concat(arr1);
+        arr3.push("嘻嘻嘻");
+        console.log(arr3,arr1)
+        
+        var arr4 = arr1.slice(0)
+        arr4.push("嘻嘻嘻") 
+        console.log(arr4,arr1)
+
+        // 内存 : 堆  栈
+        // 基本类型中 数据 全局 存在 栈 中
+        // 引用类型数据 存在 堆 中, 在 栈中  存的[在堆中地址]
+        // 浅拷贝  拷贝的是地址
+        // 深拷贝  在堆中重新开辟一个空间:有了新的地址
+
+
+        var  arr2 = [1,2,[4,1,2,3]];
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // c = 100 编译阶段GO没有，执行阶段新增c
+        var a = 100;
+        function testResult() {
+            var b = 2 * a;
+            var a = 200;
+            var c = a / 2;
+            console.log(d)
+            // alert(b);
+            // alert(c);
+
+            return c;
+            var d;
+        }
+        testResult();
+        /*
+            GO{
+                a:100
+            }
+            GO{
+                a:100,
+                testResult:function
+
+            }
+            AO{}
+            AO{
+                a:undefined,
+                b:undefined,
+                c:undefined
+            }
+        */
+    </script>
+</body>
+
+</html>

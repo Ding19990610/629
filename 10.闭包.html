@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 什么是闭包?
+        // 闭包的优点是什么？
+        // 闭包的缺点是什么？
+        // 函数return  返回 函数
+        // 优点: 1 外部函数可以访问内部函数的变量 2 变量不会被污染,
+        // 缺点:变量不能释放,导致内存泄漏
+        // 为什么会内存泄漏?-------AO对象在闭包之中不销毁
+
+        // foo函数 执行一次,形成一个闭包,闭包与闭包之间  彼此独立 互不干扰
+        // 因为foo每次执行,都会初始化一个AO对象,多个AO多个地址
+        function foo(){
+            var num = 0 
+            return function a(){
+                num ++
+                console.log("这就是闭包",num)
+            }
+        }
+
+        var bar = foo(); //bar是函数return的结果
+        // 怎么实现外部访问内部的?  存a函数指针,内部还是a 访问foo的变量
+        console.log(bar);
+        // 写法上看出:函数内有函数、return返回了一个函数,里面的函数访问的函数体中的变量
+    </script>
+</body>
+</html>

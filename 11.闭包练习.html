@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        (function(window){  //形参
+            var num = 0;
+            // foo是window下属性,全局  foo 存的值为 指针
+            window.foo = function(){
+                // 全局函数中,访问私有的立即执行函数  num
+                console.log(num,"num+++++++++++")
+                var count = 0;
+                return function bar(){
+                    console.log(count++);
+                }
+            }
+        })(window) //执行符  相当于实参
+        var bar = foo();
+        bar();
+        bar();
+        num ++ ;  //报错 num is not defined
+        console.log(bar);
+    </script>
+</body>
+</html>

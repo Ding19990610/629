@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [1,2,3,4,5,6,7,8];
+        var res = [];
+        // 让res中内容 于 arr中内容 一模一样
+        // res  = [...arr];
+        // ...Array/Object   展开运算符适用于对象和数组
+
+        var obj = {
+            name:"丁龙飞",
+            age : 22
+        }
+        // obj内容一模一样
+        var clone = {}
+        for(var x in obj){
+            // clone.x是字符串  clone[x]是变量，x的赋值是字符串
+            clone[x] = obj[x]
+        }
+        console.log(clone);
+
+        var clone1 = {...obj};
+        console.log(clone1)
+
+        // 总结: 
+        // 展开 对象  则 用  对象接收
+        // 展开 数组  则 用  数组接收
+    </script>
+</body>
+</html>
